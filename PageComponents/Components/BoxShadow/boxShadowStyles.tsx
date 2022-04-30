@@ -22,6 +22,11 @@ export const BoxShadowDivWithOutline = styled.div<{ color: string }>`
   ${(props) => `background:${props.color}`}
 `;
 
+export const DraggableBoxShadowDiv = styled(BoxShadowDiv)`
+  top: 0px;
+  left: 0px;
+`;
+
 export const BoxShadowOverlay = styled.div<{ borderRadius?: number }>`
   background: rgba(0, 0, 0, 0);
   width: 125px;
@@ -35,6 +40,7 @@ export const BoxShadowOverlay = styled.div<{ borderRadius?: number }>`
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  user-select: none;
   ${(props) => `border-radius: ${props.borderRadius || "0"}px;`}
   & > * {
     margin: 32px;
@@ -110,4 +116,42 @@ export const BoxShadowTitle = styled.p`
   font-weight: 400;
   margin: 12px 0px 44px 0px;
   font-family: Verdana, sans-serif;
+`;
+export const BoxShadowTextContainer = styled.div`
+  position: relative;
+  width: 200px;
+  text-align: center;
+  & > p {
+    position: relative;
+    font-size: 40px;
+    z-index: 1;
+    margin: 4px 0px;
+  }
+  &:hover {
+    & > div {
+      top: 0px;
+      left: 0px;
+    }
+  }
+`;
+
+export const BoxShadowTextBackground = styled.div<{
+  left: number;
+  top: number;
+  color: string;
+}>`
+  position: absolute;
+  ${(props) => `
+    top: ${props.top}px;
+    left: ${props.left}px;
+    background: ${props.color};
+  `}
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.5s;
+`;
+
+export const Break = styled.div<{ height: number }>`
+  ${(props) => `margin-top: ${props.height}px`}
 `;
