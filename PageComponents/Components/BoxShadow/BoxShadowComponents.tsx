@@ -70,8 +70,8 @@ export const DraggableBoxShadowComponent = (props: IBoxShadowComponent) => {
             y: (rect.bottom - rect.top) / 2,
           };
           setOffset({
-            x: middle.x - mouse.x,
-            y: middle.y - mouse.y,
+            x: (middle.x - mouse.x) / 4,
+            y: (middle.y - mouse.y) / 4,
           });
         }
       });
