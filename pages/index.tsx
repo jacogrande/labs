@@ -12,6 +12,10 @@ const projects: IProject[] = [
     name: "Box Shadow Backgrounds",
     path: "/components/box-shadow",
   },
+  {
+    name: "Underlines",
+    path: "/components/underlines",
+  },
 ];
 
 const Home: NextPage = () => {

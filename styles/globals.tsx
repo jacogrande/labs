@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Page = styled.main`
-  padding: 16px;
-  width: calc(100vw - 32px);
+  padding: 16px 0px;
+  width: 100vw;
   flex: 1;
   display: flex;
   justify-content: center;
